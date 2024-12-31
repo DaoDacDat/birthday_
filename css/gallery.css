@@ -1,8 +1,14 @@
+:root {
+  --white: rgb(255, 255, 255);
+    /*--blue: rgb(83, 158, 214);*/
+    --blue:rgb(44, 83, 178);
+}
 body {
     /* Ảnh nền của trang thứ 3 */
     background: url("../img/pexels-cátia-matos-1072179.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
   }
   .hello {
     opacity: 1 !important;
@@ -152,4 +158,48 @@ body {
 img {
   width: 90%;
   height: auto;
+}
+
+h1{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: consolas;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      color: transparent;
+      pointer-events: none;
+      /*color: #213555 ;*/
+      /*box-shadow: 0 0 30px #eee;*/
+  }
+
+h1::after {
+  /*position: absolute;*/
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--white);
+  /*animation: type 12s steps(var(--character)) infinite;*/
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+h3{
+  color: white;
 }

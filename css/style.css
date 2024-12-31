@@ -8,19 +8,24 @@ html {
 a {
     text-decoration: none;
 }
-
+:root {
+  --white: rgb(255, 255, 255);
+    /*--blue: rgb(83, 158, 214);*/
+    --blue:rgb(44, 83, 178);
+}
 .page__main {
     /* Ảnh nền của trang đầu tiên nếu bạn muốn đổi thì đổi tại đây */
-    background-image: url("../img/background.png");
+    background-image: url("../img/hinh-nen-may-cuc-dep.jpg");
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     background-size: cover;
-    background-position-y: -18rem;
+    background-attachment: fixed;
+    /*background-position-y: -18rem;*/
 }
 .buttons {
     display: flex;
-    column-gap: 3rem;
+    column-gap: 2rem;
     padding: 2rem;
 }
 
@@ -37,15 +42,19 @@ a {
         #26a0da 51%,
         #314755 100%
     );
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+
     margin: 10px;
-    padding: 15px 45px;
+    padding: 15px 15px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 50%;
     display: block;
 }
 
@@ -58,15 +67,18 @@ a {
     );
 }
 .btn-timeline {
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
     margin: 10px;
-    padding: 15px 45px;
+    padding: 15px 15px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 50%;
     display: block;
 }
 
@@ -85,15 +97,18 @@ a {
     );
 }
 .btn-gallery {
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
     margin: 10px;
-    padding: 15px 45px;
+    padding: 15px 15px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 50%;
     display: block;
 }
 
@@ -104,14 +119,141 @@ a {
 }
 
 .cover {
+    position: absolute;
+    /*z-index: 2;*/
     width: 240px;
     height: 240px;
 
     box-shadow: 0 0 30px #eee;
-    position: absolute;
+    /*position: absolute;*/
     margin-top: 3rem;
-    left: calc(50% - 100px);
+    left: calc(50% - 120px);
 
     border-radius: 120px;
-    border: 5px solid rgb(255, 17, 0);
+    border: 5px solid rgb(83,158,214);
+}
+
+/*body {*/
+/*    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+/*    background: rgb(181,53,255);*/
+/*    background: linear-gradient(24deg, rgba(181,53,255,1) 0%, rgba(80,80,255,1) 35%, rgba(58,254,242,1) 100%);*/
+/*    color: white;*/
+/*    overflow: hidden;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*  }*/
+
+  /*h1 {*/
+  /*  margin: 0;*/
+  /*  font-size: 22px;*/
+  /*  line-height: 24px;*/
+  /*}*/
+
+  .main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 364px;
+    padding: 24px;
+    background: white;
+    color: rgb(14, 30, 37);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    transition: 0.2s;
+  }
+
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 30px 46px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+  a {
+    margin: 0;
+    font-weight: 600;
+    line-height: 24px;
+    color: #054861;
+  }
+
+  a svg {
+    position: relative;
+    top: 2px;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+  a:hover svg path{
+    fill: #007067;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  /*.message{*/
+  /*    position: absolute;*/
+  /*  !*z-index: 2;*!*/
+  /*  width: calc(100%);*/
+  /*  height: 240px;*/
+
+  /*  !*position: absolute;*!*/
+  /*  !*margin-bottom: 1rem;*!*/
+  /*    top: calc(75%);*/
+  /*  left: calc(50% - 240px);*/
+
+  /*}*/
+
+h1{
+      position: absolute;
+      left: 50%;
+      top: 75%;
+      transform: translate(-50%, -50%);
+      font-family: consolas;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      color: transparent;
+      pointer-events: none;
+      /*color: #213555 ;*/
+      /*box-shadow: 0 0 30px #eee;*/
+  }
+
+h1::after {
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--blue);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--blue);
+  animation: type 12s steps(var(--character)) infinite;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
